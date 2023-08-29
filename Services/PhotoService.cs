@@ -18,7 +18,7 @@ namespace RunGroupWebApp.Services
                 );
             _cloudinary = new Cloudinary(acc);
         }
-        public async Task<ImageUploadResult> AddPhtotoAsync(IFormFile file)
+        public async Task<ImageUploadResult> AddPhotoAsync(IFormFile file)
         {
             var uploadResult = new ImageUploadResult();
             if (file.Length > 0)

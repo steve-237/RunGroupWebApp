@@ -37,7 +37,7 @@ namespace RunGroupWebApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                var result = await _photoService.AddPhtotoAsync(clubVM.Image);
+                var result = await _photoService.AddPhotoAsync(clubVM.Image);
 
                 var club = new Club
                 {
@@ -89,7 +89,7 @@ namespace RunGroupWebApp.Controllers
 
             var userClub = await _clubRepository.GetByIdAsyncNoTracking(id);
 
-            if (userClub == null)
+            if (userClub != null)
             {
                 try
                 {
@@ -100,7 +100,7 @@ namespace RunGroupWebApp.Controllers
                     ModelState.AddModelError("", "Could not delete photo");
                     return View(clubVM);
                 }
-                var photoResult = await _photoService.AddPhtotoAsync(clubVM.Image);
+                var photoResult = await _photoService.AddPhotoAsync(clubVM.Image);
 
                 var club = new Club
                 {
@@ -121,5 +121,49 @@ namespace RunGroupWebApp.Controllers
                 return View(clubVM);
             }
         }
+
+        /* [HttpPost]
+         public async Task<IActionResult> Edit(int id, EditClubViewModel clubVM)
+         {
+             if (!ModelState.IsValid)
+             {
+                 ModelState.AddModelError("", "Failed to edit club");
+                 return View("Edit", clubVM);
+             }
+
+             var userClub = await _clubRepository.GetByIdAsyncNoTracking(id);
+
+             if (userClub == null)
+             {
+                 return View("Error");
+             }
+
+             var photoResult = await _photoService.AddPhotoAsync(clubVM.Image);
+
+             if (photoResult.Error != null)
+             {
+                 ModelState.AddModelError("Image", "Photo upload failed");
+                 return View(clubVM);
+             }
+
+             if (!string.IsNullOrEmpty(userClub.Image))
+             {
+                 _ = _photoService.DeletePhotoAsync(userClub.Image);
+             }
+
+             var club = new Club
+             {
+                 Id = id,
+                 Title = clubVM.Title,
+                 Description = clubVM.Description,
+                 Image = photoResult.Url.ToString(),
+                 AddressId = clubVM.AddressId,
+                 Address = clubVM.Address,
+             };
+
+             _clubRepository.Update(club);
+
+             return RedirectToAction("Index");
+         }*/
     }
 }
