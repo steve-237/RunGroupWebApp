@@ -87,3 +87,4 @@ D:\formations personnelles\c# ASP.Net core MVC\RunGroupWebApp\RunGroupWebApp\bin
 D:\formations personnelles\c# ASP.Net core MVC\RunGroupWebApp\RunGroupWebApp\bin\Debug\net6.0\System.Memory.Data.dll
 D:\formations personnelles\c# ASP.Net core MVC\RunGroupWebApp\RunGroupWebApp\bin\Debug\net6.0\CloudinaryDotNet.dll
 D:\formations personnelles\c# ASP.Net core MVC\RunGroupWebApp\RunGroupWebApp\bin\Debug\net6.0\Newtonsoft.Json.dll
+D:\formations personnelles\c# ASP.Net core MVC\RunGroupWebApp\RunGroupWebApp\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
