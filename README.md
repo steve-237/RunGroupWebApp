@@ -11,7 +11,7 @@ RunGroupWebApp is an ASP.NET Core MVC application designed for managing running 
 - 🚀 Simple and user-friendly interface for smooth event management
 
 ## Technologies Used ⚙️
-- **ASP.NET Core MVC** 🚀
+- **C#(ASP.NET Core MVC)** 🚀
 - **HTML** 🌐
 - **CSS** 🎨
 - **JavaScript** 💻
